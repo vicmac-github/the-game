@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  heigh: auto;
+  max-with: 100%;
+}
+
+picture {
+  display: block;
+}
+
+body {
+  font-size: 100%;
+  background-color: aquamarine;
+}
