@@ -1,6 +1,9 @@
+//************************ /
+// Dimensiones de la grilla
+//************************ /
+
 const width = 10;
 const height = width;
-
 const cellCount = width * height;
 
 //************************ /
@@ -32,17 +35,9 @@ for (let index = 0; index < cellCount; index = index + 1) {
   cellsEnemigo.push(cell);
 }
 
-// const portaviones = [0, 1, 2, 3];
-
-// const renderPortaviones = (position) => {
-//   cellsAmigo[position].classList.add('ship');
-// };
-
-// portaviones.forEach(renderPortaviones);
-
-// const buque = [95, 85, 75];
-
-// buque.forEach(renderPortaviones);
+//************************ /
+// Barcos
+//************************ /
 
 class Ship {
   constructor({ type, orientation, board, positionInital }) {
@@ -95,6 +90,12 @@ class Ship {
         cellsAmigo[position].classList.add('ship');
       });
     }
+
+    if (this.board === 'enemigo') {
+      this.positions.forEach((position) => {
+        cellsEnemigo[position].classList.add('ship');
+      });
+    }
   }
 }
 
@@ -103,6 +104,13 @@ const portaviones = new Ship({
   orientation: 'horizontal',
   board: 'amigo',
   positionInital: 11,
+});
+
+const buque = new Ship({
+  type: 'buque',
+  orientation: 'vertical',
+  board: 'amigo',
+  positionInital: 16,
 });
 
 const lancha = new Ship({
@@ -116,5 +124,15 @@ const fragata = new Ship({
   type: 'fragata',
   orientation: 'vertical',
   board: 'amigo',
-  positionInital: 41,
+  positionInital: 61,
 });
+
+portaviones.render();
+buque.render();
+lancha.render();
+fragata.render();
+
+// TODO:
+// Evitar que barcos se solapen
+// Evitar que las posiciones de los barcos no rebasen los margenes de la grilla
+// Colocar los barcos aletoreament en las respectivas grillas (enemigo | amigo)
