@@ -16,3 +16,44 @@ body {
   font-size: 100%;
   background-color: aquamarine;
 }
+
+#campoenemigo {
+  margin: auto;
+  margin-top: 25px;
+  width: 400px;
+  height: 400px;
+  background-color: burlywood;
+  /* background-color: black; */
+}
+#campoamigo {
+  margin: auto;
+  margin-top: 25px;
+  width: 400px;
+  height: 400px;
+  margin-bottom: 25px;
+  background-color: blue;
+  color: white;
+  /* background-color: red; */
+}
+
+h1 {
+  flex
+  align-content: center;
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.touche {
+  back
+}
+
+#table-y {
+  align-content: right;
+}
