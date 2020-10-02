@@ -32,3 +32,13 @@ body {
 .ship {
   background-color: gray;
 }
+
+.shipEnemigo {
+  background-color: transparent;
+}
+.agua {
+  background-color: aquamarine;
+}
+.boom {
+  background-color: red;
+}
