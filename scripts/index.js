@@ -81,46 +81,44 @@ class Ship {
         cellsEnemigo[position].classList.add("shipEnemigo");
       });
     }
+  }
+}
 //************************ /
 // Logica del juego
 //************************ /
 function ganar() {
-  if (!(cellsEnemigo.some(item => item.classList.contains('shipEnemigo')))) {
-    alert('you won')
+  if (!cellsEnemigo.some((item) => item.classList.contains("shipEnemigo"))) {
+    alert("you won");
   }
-  if (!(cellsAmigo.some(item => item.classList.contains('ship')))) {
-    alert('game over')
+  if (!cellsAmigo.some((item) => item.classList.contains("ship"))) {
+    alert("game over");
   }
 }
 function ataqueAliado(event) {
-  console.log(event)
-  if (event.target.classList.value !== 'shipEnemigo') {
-    cellsEnemigo[event.target.innerText].classList.add('agua')
-  } 
-  if (event.target.classList.value === 'shipEnemigo') {
-    cellsEnemigo[event.target.innerText].classList.remove('shipEnemigo')
-    cellsEnemigo[event.target.innerText].classList.add('boom')
-    console.log('hola')
+  console.log(event);
+  if (event.target.classList.value !== "shipEnemigo") {
+    cellsEnemigo[event.target.innerText].classList.add("agua");
   }
-  ataqueEnemigo()
-  console.log(cellsEnemigo)
-  ganar()
+  if (event.target.classList.value === "shipEnemigo") {
+    cellsEnemigo[event.target.innerText].classList.remove("shipEnemigo");
+    cellsEnemigo[event.target.innerText].classList.add("boom");
+    console.log("hola");
+  }
+  ataqueEnemigo();
+  console.log(cellsEnemigo);
+  ganar();
 }
 // Hay un error al ser math random puede repetir numeros hay que revisarlo
 function ataqueEnemigo() {
-  let ataque
-  ataque = Math.floor(Math.random() * cellsAmigo.length)
-  if (cellsAmigo[ataque].classList.value === 'ship') {
-    cellsAmigo[ataque].classList.remove('ship')
-    setTimeout(() => 
-      cellsAmigo[ataque].classList.add('boom')
-    , 500)
+  let ataque;
+  ataque = Math.floor(Math.random() * cellsAmigo.length);
+  if (cellsAmigo[ataque].classList.value === "ship") {
+    cellsAmigo[ataque].classList.remove("ship");
+    setTimeout(() => cellsAmigo[ataque].classList.add("boom"), 500);
   } else {
-    setTimeout(() => 
-      cellsAmigo[ataque].classList.add('agua')
-    , 500)
+    setTimeout(() => cellsAmigo[ataque].classList.add("agua"), 500);
   }
-  console.log(cellsAmigo)
+  console.log(cellsAmigo);
 }
 //************************ /
 // Logica del juego
